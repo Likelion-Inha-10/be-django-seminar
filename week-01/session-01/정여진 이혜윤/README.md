@@ -127,14 +127,17 @@
 ---
 
 ## settings.py
+시간대 설정, 데이터베이스 설정, 여러 경로 설정 등
+Django 프로젝트의 전반적인 설정을 담당
 
 - INSTALLED_APPS
 
   프로젝트에서 사용할 앱들의 경로가 위치하는 영역
-  user defined app의 경로도 이 항목에 포함된다
+  pip로 설치한 앱 또는 user defined app의 경로가 이 항목에 포함된다
 
 - TEMPLATES
 
+  template은 데이터를 사용자에게 보여주는 컴포넌트
   공통적으로 들어가는 html코드를 관리하기 위한 확장형 template들의 경로를 설정하는 영역
 
 - DATABASES
@@ -164,22 +167,37 @@
   ▶엔드포인트가 없는 request에 대해서는 users라는 앱의 urls를 라우팅한다
 
 ## manage.py
+프로젝트 관리 명령어 모음
 
 1.  서버 켜기
 
         python manage.py runserver
 
+    서버는 웹 브라우저로 접속했을 때, 만든 django 프로젝트를 보여주는 역할을 함
+
 2.  application 만들기
 
         python manage.py startapp
+    
+    프로젝트가 웹서비스 전체라면 app은 기능을 나타내는 단위
+    manage.py를 통해 app을 생성한 후 settings.py의 INSTALLED_APPS 영역에 app을 추가했음을 기록함
 
 3.  Database 초기화 및 변경사항 반영
 
         python manage.py migrate
+    
+    데이터베이스가 필요한 앱은 migrate가 필요
+    django에서 model이 데이터에 관한 정보를 담는데, model을 생성하거나 변화를 주었을 때 데이터베이스에 적용시켜주어야 함
+    migrate 명령어는 데이터베이스에 model의 변경사항을 적용
+
 
 4.  관리자 계정 만들기
 
         python manage.py createsuperuser
+
+    django는 모델에 대한 관리용 인터페이스를 자동으로 생성
+    admin 기능은 데이터베이스의 데이터를 쉽게 관리할 수 있음
+    admin 페이지에 들어가기 위해서 superuser를 생성해야 함
 
 > ## django 실습 [ 가상환경에서 django를 이용한 프로젝트]
 
