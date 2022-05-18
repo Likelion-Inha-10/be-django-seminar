@@ -76,6 +76,7 @@ EX) 기본 URL : "www.codelion.net" 일때
 
 
 
+
 ### 상세
 
 #### 1. 서버 켜기
@@ -122,5 +123,31 @@ ex) Starting development server at http://127.0.0.1:8000/
 >> 관리자 계정을 만들 수 있게 해줍니다.
 
 - 웹서비스에 대한 관리자 계정을 생성하고 로그인후, 해당 웹서비스의 관리자로서 관리할 수 있게 됩니다.
+
 ![image](https://user-images.githubusercontent.com/103047410/168936393-6d2fb651-7b2c-485f-bd06-c56fe97232b5.png)
 
+![image](https://user-images.githubusercontent.com/103047410/168970106-0f4fcc68-bf9c-4ec7-b0b4-db8a14caaa7b.png)
+
+## settings.py
+### 1.secret key
+
+### 2.Debug
+
+![image](https://user-images.githubusercontent.com/103047410/168970660-a3154f94-1002-4f61-b7a3-2b708593139f.png)
+
+![image](https://user-images.githubusercontent.com/103047410/168970486-3d437250-43cc-4294-ad4b-c4caeceec54f.png)
+
+![image](https://user-images.githubusercontent.com/103047410/168971130-c1908ef7-c4e4-42bf-862a-335e20d763d7.png)
+
+![image](https://user-images.githubusercontent.com/103047410/168971183-fa9650f6-0534-4dee-88c4-f86dff975885.png)
+
+### 3.Internationlization
+언어나 시간 설정
+
+![image](https://user-images.githubusercontent.com/103047410/168972098-3c574dca-5070-4ae7-a368-1589082ea8c2.png)
+
+### 4.STATIC_URL
+-웹사이트에서 미리 준비해 둔 static files 정적인(움직이지 않는)파일들의 url을 적어준다. (meida file과 반대개념)
+-ex)이미지파일,css파일 등
+
+![image](https://user-images.githubusercontent.com/103047410/168972781-228664e9-0eb1-445b-90c0-3641f0208c54.png)
