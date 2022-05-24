@@ -1,18 +1,16 @@
 ## 댓글 구현하기
 ---
 # Foreign Key
-외래키(Foreign Key)란 테이블의 필드 중에서 다른 테이블의 행과 식별할 수 있는 키를 의미함
-즉, 테이블과 테이블을 연결하기 위해 사용되는 키임
-
-
-만약 외래키를 사용하지 않고 게시물과 댓글의 내용을 저장할 기능을 구현한다면 다음과 같은 테이블로 생성해야 함
-![1](/1.png)
-위 형태는 하나의 테이블에 너무 많은 열이 추가되어 효율적이지 못한 구조가 됨
-
-
-다음과 같이 두 테이블로 나눌 수 있음
-![2](/2.png)
-Comment 테이블을 별도로 생성하고 해당 내용이 어느 Post 테이블의 id에서 사용되었는지 표기하면(외래키) 간단하게 효율적인 테이블을 구성할 수 있다
+>외래키(Foreign Key)란 테이블의 필드 중에서 다른 테이블의 행과 식별할 수 있는 키를 의미함<br/>
+>즉, 테이블과 테이블을 연결하기 위해 사용되는 키임
+>
+>만약 외래키를 사용하지 않고 게시물과 댓글의 내용을 저장할 기능을 구현한다면 다음과 같은 테이블로 생성해야 함<br/>
+>![1](/1.png)<br/>
+>위 형태는 하나의 테이블에 너무 많은 열이 추가되어 효율적이지 못한 구조가 됨<br/>
+>
+>다음과 같이 두 테이블로 나눌 수 있음
+>![2](/2.png)<br/>
+>Comment 테이블을 별도로 생성하고 해당 내용이 어느 Post 테이블의 id에서 사용되었는지 표기하면(외래키) 간단하게 효율적인 테이블을 구성할 수 있다
 ---
 
 1. Comment Model 만들기
@@ -32,11 +30,13 @@ Comment 테이블을 별도로 생성하고 해당 내용이 어느 Post 테이�
 
 
     - **admin.py**
+    ![3](/admin_register_comment.png)<br/>
     ```
         admin.site.register(Comment)	#admin 사이트에 등록
     ```
 
     - **models.py 의 class Comment** 
+    ![4](/model_notstr.png)![5](/model_str.png)<br/>
     ```
         def __str__(self):
             return self.comment		
@@ -44,7 +44,7 @@ Comment 테이블을 별도로 생성하고 해당 내용이 어느 Post 테이�
     ```
 
 2. Form 만들기
-    - **form.py**
+    - **forms.py**
     ```
         from .models import Comment	#models.py에서 만든 Comment 가져오기
         class CommentForm(form.ModelForm):	
@@ -58,13 +58,16 @@ Comment 테이블을 별도로 생성하고 해당 내용이 어느 Post 테이�
     ```
         def detail(request, blog_id):	#detail 페이지에서 댓글 폼 찍기
             comment_form = CommentForm()
-        return render(request, ~~~ {‘comment_form’:comment_form’})
+        return render(request, ~~~ {‘comment_form’:comment_form})
     ```
 
     - **detail.html**
+
+    ![5](/detailpage.png)<br/>
     ```
         <form>method=”Post” action=”{% url ‘create_comment’ blog_detail.id %}”>
-        #제출 버튼을 누르면 create_comment url로 이동, 어떤 블로그 글인지 알 수 있는 blog_detail.id도 함께 보냄. id값은 어떤 글인지 특정지을 수 있는 django의 primary key
+        #제출 버튼을 누르면 create_comment url로 이동, 어떤 블로그 글인지 알 수 있는 blog_detail.id도 함께 보냄. 
+        #id값은 어떤 글인지 특정지을 수 있는 django의 primary key
             {% csrf_token %}
             {{ comment_form }}
             <input type=”submit”>	#제출 버튼
@@ -83,19 +86,23 @@ Comment 테이블을 별도로 생성하고 해당 내용이 어느 Post 테이�
             filled_form = CommentForm(request.POST)				#filled_form변수에 CommentForm으로부터 request.POST 형식으로 받아온 데이터를 넣음
 
             if filled_form.is_valid():		#filled_form이 제대로 입력되었다면
-                finished_form.save(commit=False)		#아직 저장하지는 말고 finished_form에 담음
-            finished_form.post = get_object_or_404(Blog, pk=blog_id)					#그 객체의 post에 Blog 중 pk값이 blog_id인 것을 담음
+                finished_form = filled_form.save(commit=False)		#아직 저장하지는 말고 finished_form에 담음
+                finished_form.post = get_object_or_404(Blog, pk=blog_id)	  #그 객체의 post에 Blog 중 pk값이 blog_id인 것을 담음
             finished_form.save()
             return redirect(‘detail’, blog_id) #이 blog_id값을 갖고 있는 detail 페이지로 이동
     ```
 
     - **detail.html 에 댓글 목록들 표시**
+
+    ![6](/comment_set.png)<br/>
     ```
         {% for comment in blog_detail.comment_set.all %} 
         #특정 객체 blog_detail을 참조하는 comment 모델의 집합 blog_detail.comment_set 을 모두 가져오기 위해 .all
         <p> {{ comment }} </p>
         {% endfor %}
     ```
+
+<br/><br/><br/>
 
 ## 로그인/로그아웃
 ---
@@ -153,6 +160,8 @@ django.contrib.auth.logout(request)
     ```
 
 - **login.html 만들기**
+
+    ![7](/loginpage.png)<br/>
     ```
     <form action=”{% url ‘login’ %}” method=”POST”>
         {% csrf_token %}
@@ -189,13 +198,17 @@ django.contrib.auth.logout(request)
             return redirect('home')
     ```
 
-- **indext.html**
+- **index.html**
+
+    ![8](/login.png)<br/>
+    ![9](/notlogin.png)<br/>
+
     ```
     {% if user.is_authenticated %}	        #로그인이 된 상태
-    안녕하세요, {{ user.username }}님!<br/>
+    안녕하세요. {{ user.username }}님?<br/>
     <a href=”{% url ‘logout’ %}”>로그아웃</a>
     {% else %}			                    #로그인이 안된 상태
-    <a href=”{% url ‘login’ %}”>로그인</a>
+    아직 로그인이 되지 않았습니다.<a href=”{% url ‘login’ %}”>로그인</a>
     {% endif %}
     <br/>
     ```
