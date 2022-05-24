@@ -14,7 +14,7 @@
 ---
 
 1. Comment Model 만들기
-    - **models.py**
+    - **blogapp의 models.py**
     ```
         class Comment(models.Model):
             comment = models.Charfield(max_length=200)          #댓글(최대 길이 200자 제한)
@@ -29,13 +29,13 @@
     외래키를 작성할 때 필수적으로 포함되어야 할 매개변수에는 참조할 테이블과 개체 삭제 시 수행할 동작(on_delete)이 있다.
 
 
-    - **admin.py**
+    - **blogapp의 admin.py**
     ![3](/admin_register_comment.png)<br/>
     ```
         admin.site.register(Comment)	#admin 사이트에 등록
     ```
 
-    - **models.py 의 class Comment** 
+    - **blogapp의 models.py 내 class Comment** 
     ![4](/model_notstr.png)![5](/model_str.png)<br/>
     ```
         def __str__(self):
@@ -44,7 +44,7 @@
     ```
 
 2. Form 만들기
-    - **forms.py**
+    - **blogapp의 forms.py**
     ```
         from .models import Comment	#models.py에서 만든 Comment 가져오기
         class CommentForm(form.ModelForm):	
@@ -54,14 +54,14 @@
                 fields = [‘comment’]	#comment를 입력 받을 것
     ```
 
-    - **view.py**
+    - **blogapp의 views.py**
     ```
         def detail(request, blog_id):	#detail 페이지에서 댓글 폼 찍기
             comment_form = CommentForm()
         return render(request, ~~~ {‘comment_form’:comment_form})
     ```
 
-    - **detail.html**
+    - **blogapp templates 폴더 내 detail.html**
 
     ![5](/detailpage.png)<br/>
     ```
@@ -74,13 +74,13 @@
         </form>				#form을 만들어줌
     ```
 
-    - **url.py**
+    - **장고 프로젝트 내 url.py**
     ```
         path(‘create_comment/<int:blog_id>’, views.create_comment, name=’create_comment’),
     ```
     #어떤 게시글에서 저장되었는지 알 수 있도록 <int:blog_id>를 views.creaet_comment에 인자로 전달
 
-    - **views.py**
+    - **blogapp의 views.py**
     ```
         def create_comment(request, blog_id):
             filled_form = CommentForm(request.POST)				#filled_form변수에 CommentForm으로부터 request.POST 형식으로 받아온 데이터를 넣음
