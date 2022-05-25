@@ -77,8 +77,8 @@
     - **장고 프로젝트 내 url.py**
     ```
         path(‘create_comment/<int:blog_id>’, views.create_comment, name=’create_comment’),
+        #어떤 게시글에서 저장되었는지 알 수 있도록 <int:blog_id>를 views.creaet_comment에 인자로 전달
     ```
-    #어떤 게시글에서 저장되었는지 알 수 있도록 <int:blog_id>를 views.creaet_comment에 인자로 전달
 
     - **blogapp의 views.py**
     ```
@@ -156,7 +156,7 @@ django.contrib.auth.logout(request)
                 pass
             else:
                 return render(request, ‘login.html’)
-                #GET 요청이 들어오면 login form을 담고있는 login.html을 띄워주는 역할을 함
+                #login form을 담고있는 login.html을 띄워주는 역할을 함
     ```
 
 - **login.html 만들기**
@@ -189,7 +189,7 @@ django.contrib.auth.logout(request)
                     return redirect(‘home’)
                 else:
                     return render(request, ‘login.html’)
-            #GET 요청이 들어오면 login form을 담고있는 login.html을 띄워주는 역할을 함
+            #login form을 담고있는 login.html을 띄워주는 역할을 함
             else:
                     return render(request, ‘login.html’)
         
