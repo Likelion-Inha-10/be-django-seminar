@@ -114,7 +114,7 @@
 
 >- urls.py 
 ![](https://velog.velcdn.com/images/97gkswn/post/651d9e75-78b5-4fa8-8ddc-a6ef562024dd/image.png)
-외우는게 좋다(관례적으로 쓰임)
+- 외우는게 좋다(관례적으로 쓰임)
 
 <br/>
 <br/>
