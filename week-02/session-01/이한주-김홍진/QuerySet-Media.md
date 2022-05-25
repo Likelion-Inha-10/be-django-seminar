@@ -5,9 +5,9 @@
 <br/>
 
 >![](https://velog.velcdn.com/images/97gkswn/post/16d525aa-f135-461a-a410-4e3c7e39a043/image.png)<br/> 
-views.py에 가서 home 메소드를 수정
-블로그라는 객체를 모두 가져와 posts변수에 저장
-render의 세 번째 함수에 딕셔너리형태로 넘겨줌
+- views.py에 가서 home 메소드를 수정
+- 블로그라는 객체를 모두 가져와 posts변수에 저장
+- render의 세 번째 함수에 딕셔너리형태로 넘겨줌
 
 <br/>
 
@@ -15,8 +15,8 @@ render의 세 번째 함수에 딕셔너리형태로 넘겨줌
 >![](https://velog.velcdn.com/images/97gkswn/post/82059032-7bfe-4e02-9eb4-e3ba5f52cbd3/image.png)
 ![](https://velog.velcdn.com/images/97gkswn/post/35607e63-d114-4159-8ba8-e073a95e948b/image.png)
 >>QuerySet이라는 자료의 형태로 감싸진 채로 표시됨
-QuerySet이란? 
-데이터베이스(DB)에서 전달받은 객체 목록
+- QuerySet이란? 
+- 데이터베이스(DB)에서 전달받은 객체 목록
 
 <br/>
 
