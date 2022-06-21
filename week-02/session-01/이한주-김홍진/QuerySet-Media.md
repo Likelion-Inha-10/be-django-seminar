@@ -1,20 +1,27 @@
 ## 글 목록 앞으로 빼기
+- 썼던 글들을 admin페이지 말고 home(기본 url) 에 나타나게 하고싶다.
+- (1) views.py 수정
+- (2) index.html 수정
+
 >![](https://velog.velcdn.com/images/97gkswn/post/9569eb75-0ced-4e7a-bbf0-79461c2a8c7d/image.png)
-썼던 글들을 admin페이지 말고 home(기본 url) 에 나타나게 하고싶다.
 
 <br/>
+<br/>
 
+(1) views.py
 >![](https://velog.velcdn.com/images/97gkswn/post/16d525aa-f135-461a-a410-4e3c7e39a043/image.png)<br/> 
-- views.py에 가서 home 메소드를 수정
-- 블로그라는 객체를 모두 가져와 posts변수에 저장
-- render의 세 번째 함수에 딕셔너리형태로 넘겨줌
+>- views.py에 가서 home 메소드를 수정
+>- 블로그라는 객체를 모두 가져와 posts변수에 저장
+>- render의 세 번째 인자에 딕셔너리형태로 넘겨줌
 
 <br/>
-
 
 >![](https://velog.velcdn.com/images/97gkswn/post/82059032-7bfe-4e02-9eb4-e3ba5f52cbd3/image.png)
+
+
+### 웹페이지 화면
 ![](https://velog.velcdn.com/images/97gkswn/post/35607e63-d114-4159-8ba8-e073a95e948b/image.png)
->>QuerySet이라는 자료의 형태로 감싸진 채로 표시됨
+- QuerySet이라는 자료의 형태로 감싸진 채로 표시됨
 - QuerySet이란? 
 - 데이터베이스(DB)에서 전달받은 객체 목록
 
