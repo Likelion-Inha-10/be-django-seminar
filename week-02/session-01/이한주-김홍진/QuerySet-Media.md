@@ -44,7 +44,7 @@
 
 <br/>
 
->(views.py)
+(views.py)
 >![](https://velog.velcdn.com/images/97gkswn/post/4effc9b4-7a07-422c-aa40-1a23e647541a/image.png)
 - 객체들을 필터링해서 가져오는방법
 - 날짜를 기준으로 정렬(order_by)해서 posts에 담기게됨
@@ -60,14 +60,17 @@
 <br/>
 <br/>
 
->- 테이블마다 primary key 가 존재
+- 테이블마다 primary key 가 존재
 - primary key를 따로 지정해주지않으면 알아서 설정함
 - id라는 숫자형 primary key값을 객체가 만들어진 순서로 설정
 - 첫 번째 만들어진 id =1
 - 두 번째 만들어진 id =2
 >![](https://velog.velcdn.com/images/97gkswn/post/d0cab88c-bbca-46c7-b9f8-d5dfea289da5/image.png)
--웹페이지 화면
-![](https://velog.velcdn.com/images/97gkswn/post/eed9426c-349e-4236-b824-4021b21f231a/image.png)
+
+<br/>
+
+- 웹페이지 화면
+>![](https://velog.velcdn.com/images/97gkswn/post/eed9426c-349e-4236-b824-4021b21f231a/image.png)
 
 <br/>
 <br/>
