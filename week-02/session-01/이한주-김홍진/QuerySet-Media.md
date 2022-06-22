@@ -108,12 +108,14 @@
 <br/>
 <br/>
 
->(detail.html)
+- (detail.html)
 >![](https://velog.velcdn.com/images/97gkswn/post/852cfc23-9c71-47a4-815c-f43cc0da8075/image.png)
 ><br/>
->- 실제 웹페이지 화면
-![](https://velog.velcdn.com/images/97gkswn/post/fde9303c-581f-4914-9a37-f4db675959f9/image.png)
-![](https://velog.velcdn.com/images/97gkswn/post/e1d0e308-fe23-4190-a138-4e2f4f4a3f0c/image.png)
+><br/>
+- 실제 웹페이지 화면
+>
+>![](https://velog.velcdn.com/images/97gkswn/post/fde9303c-581f-4914-9a37-f4db675959f9/image.png)
+>![](https://velog.velcdn.com/images/97gkswn/post/e1d0e308-fe23-4190-a138-4e2f4f4a3f0c/image.png)
 
 <br/>
 <br/>
@@ -123,10 +125,9 @@
 ### media파일이란? 사용자가 업로드한 파일
 - 사용자가 파일 업로드 할 수 있도록 세팅
 
->(settings.py) 
+- (settings.py) 
 >![](https://velog.velcdn.com/images/97gkswn/post/a8a52450-fe58-4aa7-b4df-8a07ccb0f0a1/image.png)
-- Media_Root부분->어떤 폴더에 저장 할 지 
-- 프로젝트('BASE_DIR'렉토리) 내에 'media'라는 폴더가 자동으로 생성됨
+- MEDIA_Root부분->미디어 파일을 어떤 폴더에 저장 할 지 (프로젝트('BASE_DIR'렉토리) 내에 'media'라는 폴더가 자동으로 생성됨)
 - MEDIA_URL부분->그 경로의 url을 정해주는 부분
 
 <br/>
@@ -139,6 +140,7 @@
 <br/>
 
 >- models.py
+>
 >![](https://velog.velcdn.com/images/97gkswn/post/2a297a82-c27f-459d-827e-cb1cc7977834/image.png)
 - Blog객체에 이미지타입의 photo변수 추가
 - (blank)비어있어도 되고 NULL 이어도 된다
@@ -158,6 +160,7 @@
 <br/>
 
 >- views,py
+>
 >![](https://velog.velcdn.com/images/97gkswn/post/c379832d-fe40-4767-b28b-9bc27aea0792/image.png)
 
 
@@ -169,8 +172,7 @@
 >![](https://velog.velcdn.com/images/97gkswn/post/f7b302ef-1a22-4762-bace-c1eb6baaa1c2/image.png)
 - 설치 후에 makemigrations -> migrate
 - 안해주면 에러남
-- 원래는 ctrl+s 로 저장하면 그냥 됐었는데 뭔가를 설치했을때는 따로 변경사항 저장 해 줘야 하는듯
-(db에 변화가 생겼으니) 
+
 
 <br/>
 <br/>
@@ -190,6 +192,6 @@
 
 ![](https://velog.velcdn.com/images/97gkswn/post/3d87b0c3-a0ae-483d-b85e-27dd43f374f1/image.png)
 
->정리 
-- DB에 있는 (Blog)객체를 html에 표현
-- 사용자가 파일 올릴 수 있도록 세팅 (Media file)
+ >정리 
+>- DB에 있는 (Blog)객체를 html에 표현
+>- 사용자가 파일 올릴 수 있도록 세팅 (Media file)
