@@ -1,4 +1,4 @@
-## 글 목록 앞으로 빼기
+# DB에 있는 Blog객체들 html에 나타내기
 - 썼던 글들을 admin페이지 말고 home(기본 url) 에 나타나게 하고싶다.
 - (1) views.py 수정
 - (2) index.html 수정
@@ -121,11 +121,20 @@
 <br/>
 <br/>
 
-## media파일 다루기 
-### media파일이란? 사용자가 업로드한 파일
+# media파일 다루기 
+## media파일이란? 사용자가 업로드한 파일
 - 사용자가 파일 업로드 할 수 있도록 세팅
+- 1.settings.py (MEDIA_ROOT, MEDIA_URL)
+- 2.urls.py 수정 (+static~)
+- 3.models.py 에서 Blog객체에 photo추가
+- 4.html에서 인코딩타입 추가
+- 5.views.py 에서 FILES요청 받도록 추가
+- 6.pillow 패키지 설치
+<br/>
+<br/>
 
-- (settings.py) 
+>- (settings.py)
+> 
 >![](https://velog.velcdn.com/images/97gkswn/post/a8a52450-fe58-4aa7-b4df-8a07ccb0f0a1/image.png)
 - MEDIA_Root부분->미디어 파일을 어떤 폴더에 저장 할 지 (프로젝트('BASE_DIR'렉토리) 내에 'media'라는 폴더가 자동으로 생성됨)
 - MEDIA_URL부분->그 경로의 url을 정해주는 부분
@@ -159,7 +168,7 @@
 <br/>
 <br/>
 
->- views,py
+>- views.py
 >
 >![](https://velog.velcdn.com/images/97gkswn/post/c379832d-fe40-4767-b28b-9bc27aea0792/image.png)
 
