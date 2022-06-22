@@ -141,6 +141,8 @@
 >![](https://velog.velcdn.com/images/97gkswn/post/a8a52450-fe58-4aa7-b4df-8a07ccb0f0a1/image.png)
 - MEDIA_Root부분->미디어 파일을 어떤 폴더에 저장 할 지 (프로젝트('BASE_DIR'렉토리) 내에 'media'라는 폴더가 자동으로 생성됨)
 - MEDIA_URL부분->그 경로의 url을 정해주는 부분 (각 media 파일에 대한 URL Prefix)
+- ![image](https://user-images.githubusercontent.com/103047410/175001873-a43e027a-ff39-4cee-998c-b98c56eed114.png)
+
 
 <br/>
 
