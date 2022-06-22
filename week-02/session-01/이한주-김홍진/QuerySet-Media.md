@@ -29,7 +29,8 @@
 <br/>
 <br/>
 
-> -객체 목록만 말고 더 자세하게 표시할 수 있게끔 수정
+# 객체 목록만 말고 더 자세하게 표시할 수 있게끔 수정
+
 >![](https://velog.velcdn.com/images/97gkswn/post/e03234f5-90b3-4a1b-b7fc-1c04174b5ae4/image.png)
 - 전달받은 posts를 순회하며 post에 담는것을 반복
 - <django가 제공하는 기능>
