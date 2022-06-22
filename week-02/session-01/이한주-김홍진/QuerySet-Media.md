@@ -197,7 +197,7 @@
 <br/>
 <br/>
 
->- 글 목록을 클릭해서 들어가면 사진까지도 나올 수 있게 detail.html을 수정
+>- 제목을 클릭해서 들어가면 사진까지도 나올 수 있게 detail.html을 수정
 >![](https://velog.velcdn.com/images/97gkswn/post/bbc346cf-63bf-4c46-8add-5e1aebd27805/image.png)
 >![](https://velog.velcdn.com/images/97gkswn/post/33a8bdfc-d14b-41ce-a9ef-476ef0f15732/image.png) 
 
