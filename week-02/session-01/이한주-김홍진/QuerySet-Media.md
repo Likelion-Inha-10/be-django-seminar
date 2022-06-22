@@ -59,7 +59,9 @@
 
 <br/>
 <br/>
+
 ## primary key를 지정 해 주지 않았을 때
+
 - 테이블마다 primary key 가 존재
 - primary key를 따로 지정해주지않으면 알아서 설정함
 - id라는 숫자형 primary key값을 객체가 만들어진 순서로 설정
