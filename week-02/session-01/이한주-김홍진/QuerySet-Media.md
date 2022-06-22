@@ -44,9 +44,9 @@
 
 <br/>
 
+## 객체들을 필터링해서 가져오는방법
 (views.py)
 >![](https://velog.velcdn.com/images/97gkswn/post/4effc9b4-7a07-422c-aa40-1a23e647541a/image.png)
-- 객체들을 필터링해서 가져오는방법
 - 날짜를 기준으로 정렬(order_by)해서 posts에 담기게됨
 - '-date' = 내림차순 , 'date' =오름차순
 
@@ -59,7 +59,7 @@
 
 <br/>
 <br/>
-
+## primary key를 지정 해 주지 않았을 때
 - 테이블마다 primary key 가 존재
 - primary key를 따로 지정해주지않으면 알아서 설정함
 - id라는 숫자형 primary key값을 객체가 만들어진 순서로 설정
