@@ -5,11 +5,11 @@
 >즉, 테이블과 테이블을 연결하기 위해 사용되는 키임
 >
 >만약 외래키를 사용하지 않고 게시물과 댓글의 내용을 저장할 기능을 구현한다면 다음과 같은 테이블로 생성해야 함<br/>
->![1](/1.png)<br/>
+>![1](https://user-images.githubusercontent.com/96401830/175278582-39baab59-eb50-45e0-8fbd-ff4c8b8b7481.png)<br/>
 >위 형태는 하나의 테이블에 너무 많은 열이 추가되어 효율적이지 못한 구조가 됨<br/>
 >
 >다음과 같이 두 테이블로 나눌 수 있음
->![2](/2.png)<br/>
+>![2](https://user-images.githubusercontent.com/96401830/175278618-f44fc9ca-c580-4656-bc03-f45560ee45f7.png)<br/>
 >Comment 테이블을 별도로 생성하고 해당 내용이 어느 Post 테이블의 id에서 사용되었는지 표기하면(외래키) 간단하게 효율적인 테이블을 구성할 수 있다
 ---
 
@@ -30,13 +30,15 @@
 
 
     - **blogapp의 admin.py**
-    ![3](/admin_register_comment.png)<br/>
+    <img width="680" alt="admin_register_comment" src="https://user-images.githubusercontent.com/96401830/175279031-c17a7dfa-90a2-4425-9919-ae0ce82ff9d2.png"><br/>
     ```
         admin.site.register(Comment)	#admin 사이트에 등록
     ```
 
     - **blogapp의 models.py 내 class Comment** 
-    ![4](/model_notstr.png)![5](/model_str.png)<br/>
+    <img width="503" alt="model_notstr" src="https://user-images.githubusercontent.com/96401830/175278950-9e09904a-e997-4290-bfdf-5cd1c34e5093.png">
+    <img width="543" alt="model_str" src="https://user-images.githubusercontent.com/96401830/175278804-b0e6fa3b-84c4-454c-ac0c-86897a03faea.png"><br/>
+    
     ```
         def __str__(self):
             return self.comment		
@@ -63,7 +65,7 @@
 
     - **blogapp templates 폴더 내 detail.html**
 
-    ![5](/detailpage.png)<br/>
+    <img width="436" alt="detailpage" src="https://user-images.githubusercontent.com/96401830/175279234-5c2ca382-e42b-49f0-a299-7bc49a75f0a9.png"><br/>
     ```
         <form>method=”Post” action=”{% url ‘create_comment’ blog_detail.id %}”>
         #제출 버튼을 누르면 create_comment url로 이동, 어떤 블로그 글인지 알 수 있는 blog_detail.id도 함께 보냄. 
@@ -94,7 +96,7 @@
 
     - **detail.html 에 댓글 목록들 표시**
 
-    ![6](/comment_set.png)<br/>
+    <img width="433" alt="comment_set" src="https://user-images.githubusercontent.com/96401830/175279278-c9ef78d2-b75a-4b26-ba98-90243f84e980.png"><br/>
     ```
         {% for comment in blog_detail.comment_set.all %} 
         #특정 객체 blog_detail을 참조하는 comment 모델의 집합 blog_detail.comment_set 을 모두 가져오기 위해 .all
@@ -161,7 +163,7 @@ django.contrib.auth.logout(request)
 
 - **login.html 만들기**
 
-    ![7](/loginpage.png)<br/>
+    <img width="238" alt="loginpage" src="https://user-images.githubusercontent.com/96401830/175279320-3b04bf06-ac1f-49a9-b685-319cc9f136ae.png"><br/>
     ```
     <form action=”{% url ‘login’ %}” method=”POST”>
         {% csrf_token %}
@@ -200,8 +202,8 @@ django.contrib.auth.logout(request)
 
 - **index.html**
 
-    ![8](/login.png)<br/>
-    ![9](/notlogin.png)<br/>
+    <img width="246" alt="login" src="https://user-images.githubusercontent.com/96401830/175279347-026f10ee-5e45-4741-ad9e-f494a4cab61a.png"><br/>
+    <img width="251" alt="notlogin" src="https://user-images.githubusercontent.com/96401830/175279379-fcb64660-8cb7-49cf-9537-5788abbd3fcd.png"><br/>
 
     ```
     {% if user.is_authenticated %}	        #로그인이 된 상태
